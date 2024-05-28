@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 2</title>
+</head>
+<body>
+<script>
+    function demKytuhoa(str) {
+        let count = 0;
+
+        for (let i = 0; i < str.length; i++) {
+            if (str[i] >= 'A' && str[i] <= 'Z') {
+                count++;
+            }
+        }
+
+        if (count > 0) {
+            return count;
+        } else {
+            return "The String is not contain upper char";
+        }
+    }
+
+    let chuoi1 = "abcDEF";
+    let chuoi2 = "accdef"
+    let result = demKytuhoa(chuoi1);
+    let result2 = demKytuhoa(chuoi2);
+    console.log(result); // Output: 2
+    document.write("Kết quả chuỗi 1: "+result+'<br>'+"Kết quả chuỗi 2: "+result2+'<br>')
+
+</script>
+</body>
+</html>

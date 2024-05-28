@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 1</title>
+</head>
+<body>
+<br>
+<script>
+    function hieuChanle(arr) {
+        let tongChan = 0;
+        let tongLe = 0;
+
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i] % 2 === 0) {
+                tongChan += arr[i];
+            } else {
+                tongLe += arr[i];
+            }
+        }
+        return tongChan - tongLe;
+    }
+
+    function main() {
+        let n = parseInt(prompt("Nhập số phần tử của mảng: "));
+        if (n > 20) {
+            alert("số phần tử phải nhỏ hơn 20")
+            return;
+        }
+        let arr = [];
+
+        for (let i = 0; i < n; i++) {
+            let phantu = parseInt(prompt(`Nhập phần tử thứ ${i + 1}: `));
+            arr.push(phantu);
+        }
+        document.write("Danh sách các phần tử của mảng: " + arr + '<br>')
+
+        let hieu = hieuChanle(arr);
+        document.write(`Hiệu của Tổng các số chẵn và Tổng các số lẻ: ${hieu}`);
+    }
+    main();
+</script>
+</body>
+</html>

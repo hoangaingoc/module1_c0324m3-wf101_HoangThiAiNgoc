@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 4</title>
+</head>
+<body>
+<script>
+    class Phone {
+        constructor(id, name, produce, price) {
+            this.id = id;
+            this.name = name;
+            this.produce = produce;
+            this.price = price;
+        }
+
+        getId() {
+            return this.id;
+        }
+
+        setId(id) {
+            this.id = id;
+        }
+
+        getName() {
+            return this.name;
+        }
+
+        setName(name) {
+            this.name = name;
+        }
+
+        getProduce() {
+            return this.produce;
+        }
+
+        setProduce(produce) {
+            this.produce = produce;
+        }
+
+        getPrice() {
+            return this.price;
+        }
+
+        setPrice(price) {
+            this.price = price;
+        }
+
+        toString() {
+            return `Mã điện thoại: ${this.id}, Tên sản phẩm: ${this.name}, Nhà sản xuất: ${this.produce}, Giá: ${this.price}`;
+        }
+    }
+
+    class PhoneManager {
+        constructor() {
+            this.phoneList = [];
+        }
+
+        addPhone(phone) {
+            this.phoneList.push(phone);
+        }
+
+        displayPhones() {
+            this.phoneList.sort((a, b) => a.getName().localeCompare(b.getName()));
+            this.phoneList.forEach(phone => {
+                document.write(phone.toString() + '<br>');
+            });
+        }
+    }
+
+    const phoneManager = new PhoneManager();
+
+    phoneManager.addPhone(new Phone("001", "iPhone 12", "Apple", 15000000));
+    phoneManager.addPhone(new Phone("002", "Galaxy S21", "Samsung", 17000000));
+    phoneManager.addPhone(new Phone("003", "Xperia 5", "Sony", 3000000));
+    phoneManager.addPhone(new Phone("004", "Galaxy S24", "Samsung", 22000000));
+
+    phoneManager.displayPhones();
+
+</script>
+</body>
+</html>

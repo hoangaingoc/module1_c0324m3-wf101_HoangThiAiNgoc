@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 3</title>
+</head>
+<body>
+<script>
+    let arr = [1, 5, 6, 23, 8, 47, 10, 3]
+
+    function songuyento(num) {
+
+        for (let i = 2; i <= Math.sqrt(num); i++) {
+            if (num % i === 0) return false;
+        }
+        return true;
+    }
+
+    function timSonguyento(arr) {
+        let primes = arr.filter(songuyento);
+        document.write("Mảng các số nguyên tố: ",primes, '<br>' );
+        primes.sort((a, b) => a - b);
+        return primes;
+    }
+    let result = timSonguyento(arr);
+    document.write("Mảng các số nguyên tố sau khi sắp xếp tăng dần: ", result);
+</script>
+</body>
+</html>
